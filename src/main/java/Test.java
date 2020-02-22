@@ -6,5 +6,8 @@
  * @Copyright © 2019.12.2
  */
 public class Test {
-    int a ;
+    int b ;
+    String c;
+    
+    
 }
