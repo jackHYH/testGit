@@ -10,5 +10,5 @@ public class Test {
     String c;
 
     int bbbbbbb;
-    dfdf
+    int afaf;
 }
