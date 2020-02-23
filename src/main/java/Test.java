@@ -11,4 +11,6 @@ public class Test {
 
     int bbbbbbb;
     int afaf;
+    int afasss;
+    int afafff;
 }
