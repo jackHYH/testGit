@@ -17,7 +17,6 @@ public class HomeController {
         //返回WEB_INF/pages/home.jsp
         //使用分支
         //使用分支提交和合并
-        //使用分支提交和合并
         int a =20;
         return "home";
     }
