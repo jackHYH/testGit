@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @RequestMapping("/home")
     public String home(){
+        //返回WEB_INF/pages/home.jsp
         int a =20;
         return "home";
     }
