@@ -15,6 +15,7 @@ public class HomeController {
     @RequestMapping("/home")
     public String home(){
         //返回WEB_INF/pages/home.jsp
+        //使用分支
         int a =20;
         return "home";
     }
