@@ -1,7 +1,9 @@
 package yong.hui.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author hyh
@@ -14,14 +16,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomeController {
     @RequestMapping("/home")
     public String home(){
-        //返回WEB_INF/pages/home.jsp
-        //使用分支
-        //使用分支提交和合并
-         //使用分支提交和合并
-         //使用分支提交和合并
-        //24
-        //1111
-        int a =20;
         return "home";
     }
+    
+    @RequestMapping("/changeName1/{username}/{age}")
+    @ResponseBody
+    public String ChangeName1(@PathVariable String username,@PathVariable int age){
+        System.out.println(username);
+        System.out.println(age);
+        return username;
+    }
+
 }
