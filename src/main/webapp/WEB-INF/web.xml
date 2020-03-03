@@ -3,7 +3,7 @@
          xmlns="http://java.sun.com/xml/ns/javaee"
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="yhmis" version="2.5">
-  <display-name>yhmis</display-name>
+  <display-name>HYH</display-name>
   <!-- 整合spring框架
       1、加载核心配置文件
       2、启动监听
