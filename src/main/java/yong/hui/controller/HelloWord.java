@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloWord {
     @RequestMapping("/hello")
     public String hello(){
-        return "hello";
+        return "hello";  //返回hello页面
     }
 }
