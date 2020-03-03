@@ -8,5 +8,6 @@
 	3、映射文件
  -->
 <configuration>
+    <!-- mappers引入映射文件 -->
 
 </configuration>

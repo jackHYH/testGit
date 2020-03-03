@@ -1,17 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
-    <groupId>hui.yong.hu</groupId>
+    <groupId>yong.hui.hu</groupId>
     <artifactId>HYH</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
-
-    <name>HYH Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
 
     <!-- 集中定义依赖版本号 -->
     <properties>
@@ -75,18 +67,6 @@
             <version>${mysql.version}</version>
         </dependency>
 
-        <!--    日志-->
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>2.2.2</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
-
         <!-- 连接池 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -127,31 +107,24 @@
         </dependency>
     </dependencies>
 
-
     <build>
         <plugins>
-            <!--      tomcat插件-->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
                     <port>8060</port>
-                    <path>/HYH</path>
+                    <path>/</path>
                 </configuration>
             </plugin>
-            <!--      mybaties生成代码插件-->
+
             <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>
-                <configuration>
-                    <verbose>true</verbose>
-                    <overwrite>true</overwrite>
-                </configuration>
             </plugin>
 
         </plugins>
     </build>
-
 </project>
