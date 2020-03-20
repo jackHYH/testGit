@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="yong.hui.dao.MdmMapper" >
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.Mdm" >
+    <id column="LINENUM" property="linenum" jdbcType="DECIMAL" />
+    <result column="MDM_OBJECT" property="mdmObject" jdbcType="VARCHAR" />
+    <result column="MDM_OBJECT_NAME" property="mdmObjectName" jdbcType="VARCHAR" />
+    <result column="MDM_TABLE" property="mdmTable" jdbcType="VARCHAR" />
+    <result column="MDM_TABLE_NAME" property="mdmTableName" jdbcType="VARCHAR" />
+    <result column="FIELD" property="field" jdbcType="VARCHAR" />
+    <result column="FIELD_NAME" property="fieldName" jdbcType="VARCHAR" />
+    <result column="FIELD_TYPE" property="fieldType" jdbcType="VARCHAR" />
+    <result column="REQUIRED" property="required" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    LINENUM, MDM_OBJECT, MDM_OBJECT_NAME, MDM_TABLE, MDM_TABLE_NAME, FIELD, FIELD_NAME, 
+    FIELD_TYPE, REQUIRED
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from MDM
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from MDM
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="yong.hui.pojo.Mdm" >
+    insert into MDM (LINENUM, MDM_OBJECT, MDM_OBJECT_NAME, 
+      MDM_TABLE, MDM_TABLE_NAME, FIELD, 
+      FIELD_NAME, FIELD_TYPE, REQUIRED
+      )
+    values (#{linenum,jdbcType=DECIMAL}, #{mdmObject,jdbcType=VARCHAR}, #{mdmObjectName,jdbcType=VARCHAR}, 
+      #{mdmTable,jdbcType=VARCHAR}, #{mdmTableName,jdbcType=VARCHAR}, #{field,jdbcType=VARCHAR}, 
+      #{fieldName,jdbcType=VARCHAR}, #{fieldType,jdbcType=VARCHAR}, #{required,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.Mdm" >
+    insert into MDM
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="linenum != null" >
+        LINENUM,
+      </if>
+      <if test="mdmObject != null" >
+        MDM_OBJECT,
+      </if>
+      <if test="mdmObjectName != null" >
+        MDM_OBJECT_NAME,
+      </if>
+      <if test="mdmTable != null" >
+        MDM_TABLE,
+      </if>
+      <if test="mdmTableName != null" >
+        MDM_TABLE_NAME,
+      </if>
+      <if test="field != null" >
+        FIELD,
+      </if>
+      <if test="fieldName != null" >
+        FIELD_NAME,
+      </if>
+      <if test="fieldType != null" >
+        FIELD_TYPE,
+      </if>
+      <if test="required != null" >
+        REQUIRED,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="linenum != null" >
+        #{linenum,jdbcType=DECIMAL},
+      </if>
+      <if test="mdmObject != null" >
+        #{mdmObject,jdbcType=VARCHAR},
+      </if>
+      <if test="mdmObjectName != null" >
+        #{mdmObjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdmTable != null" >
+        #{mdmTable,jdbcType=VARCHAR},
+      </if>
+      <if test="mdmTableName != null" >
+        #{mdmTableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null" >
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null" >
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldType != null" >
+        #{fieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null" >
+        #{required,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="yong.hui.pojo.Mdm" >
+    update MDM
+    <set >
+      <if test="mdmObject != null" >
+        MDM_OBJECT = #{mdmObject,jdbcType=VARCHAR},
+      </if>
+      <if test="mdmObjectName != null" >
+        MDM_OBJECT_NAME = #{mdmObjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="mdmTable != null" >
+        MDM_TABLE = #{mdmTable,jdbcType=VARCHAR},
+      </if>
+      <if test="mdmTableName != null" >
+        MDM_TABLE_NAME = #{mdmTableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null" >
+        FIELD = #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null" >
+        FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldType != null" >
+        FIELD_TYPE = #{fieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null" >
+        REQUIRED = #{required,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="yong.hui.pojo.Mdm" >
+    update MDM
+    set MDM_OBJECT = #{mdmObject,jdbcType=VARCHAR},
+      MDM_OBJECT_NAME = #{mdmObjectName,jdbcType=VARCHAR},
+      MDM_TABLE = #{mdmTable,jdbcType=VARCHAR},
+      MDM_TABLE_NAME = #{mdmTableName,jdbcType=VARCHAR},
+      FIELD = #{field,jdbcType=VARCHAR},
+      FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      FIELD_TYPE = #{fieldType,jdbcType=VARCHAR},
+      REQUIRED = #{required,jdbcType=VARCHAR}
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </update>
+</mapper>

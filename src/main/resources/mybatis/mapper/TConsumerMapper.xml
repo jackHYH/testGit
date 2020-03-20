@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yong.hui.dao.TConsumerMapper">
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.TConsumer">
+    <result column="SYSTEM_NAME" jdbcType="VARCHAR" property="systemName" />
+    <result column="STABLE" jdbcType="VARCHAR" property="stable" />
+    <result column="STABLE_NAME" jdbcType="VARCHAR" property="stableName" />
+    <result column="FIELD" jdbcType="VARCHAR" property="field" />
+    <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
+    <result column="FIELD_TYPE" jdbcType="VARCHAR" property="fieldType" />
+    <result column="REQUIRED" jdbcType="VARCHAR" property="required" />
+    <result column="LINENUM" jdbcType="DECIMAL" property="linenum" />
+  </resultMap>
+  <insert id="insert" parameterType="yong.hui.pojo.TConsumer">
+    insert into T_CONSUMER (SYSTEM_NAME, STABLE, STABLE_NAME, 
+      FIELD, FIELD_NAME, FIELD_TYPE, 
+      REQUIRED, LINENUM)
+    values (#{systemName,jdbcType=VARCHAR}, #{stable,jdbcType=VARCHAR}, #{stableName,jdbcType=VARCHAR}, 
+      #{field,jdbcType=VARCHAR}, #{fieldName,jdbcType=VARCHAR}, #{fieldType,jdbcType=VARCHAR}, 
+      #{required,jdbcType=VARCHAR}, #{linenum,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.TConsumer">
+    insert into T_CONSUMER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="systemName != null">
+        SYSTEM_NAME,
+      </if>
+      <if test="stable != null">
+        STABLE,
+      </if>
+      <if test="stableName != null">
+        STABLE_NAME,
+      </if>
+      <if test="field != null">
+        FIELD,
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME,
+      </if>
+      <if test="fieldType != null">
+        FIELD_TYPE,
+      </if>
+      <if test="required != null">
+        REQUIRED,
+      </if>
+      <if test="linenum != null">
+        LINENUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="systemName != null">
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="stable != null">
+        #{stable,jdbcType=VARCHAR},
+      </if>
+      <if test="stableName != null">
+        #{stableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null">
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldType != null">
+        #{fieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=VARCHAR},
+      </if>
+      <if test="linenum != null">
+        #{linenum,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.TConsumer">
+    <result column="SYSTEM_NAME" jdbcType="VARCHAR" property="systemName" />
+    <result column="STABLE" jdbcType="VARCHAR" property="stable" />
+    <result column="STABLE_NAME" jdbcType="VARCHAR" property="stableName" />
+    <result column="FIELD" jdbcType="VARCHAR" property="field" />
+    <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
+    <result column="FIELD_TYPE" jdbcType="VARCHAR" property="fieldType" />
+    <result column="REQUIRED" jdbcType="VARCHAR" property="required" />
+    <result column="LINENUM" jdbcType="DECIMAL" property="linenum" />
+  </resultMap>
+  <insert id="insert" parameterType="yong.hui.pojo.TConsumer">
+    insert into T_CONSUMER (SYSTEM_NAME, STABLE, STABLE_NAME, 
+      FIELD, FIELD_NAME, FIELD_TYPE, 
+      REQUIRED, LINENUM)
+    values (#{systemName,jdbcType=VARCHAR}, #{stable,jdbcType=VARCHAR}, #{stableName,jdbcType=VARCHAR}, 
+      #{field,jdbcType=VARCHAR}, #{fieldName,jdbcType=VARCHAR}, #{fieldType,jdbcType=VARCHAR}, 
+      #{required,jdbcType=VARCHAR}, #{linenum,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.TConsumer">
+    insert into T_CONSUMER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="systemName != null">
+        SYSTEM_NAME,
+      </if>
+      <if test="stable != null">
+        STABLE,
+      </if>
+      <if test="stableName != null">
+        STABLE_NAME,
+      </if>
+      <if test="field != null">
+        FIELD,
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME,
+      </if>
+      <if test="fieldType != null">
+        FIELD_TYPE,
+      </if>
+      <if test="required != null">
+        REQUIRED,
+      </if>
+      <if test="linenum != null">
+        LINENUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="systemName != null">
+        #{systemName,jdbcType=VARCHAR},
+      </if>
+      <if test="stable != null">
+        #{stable,jdbcType=VARCHAR},
+      </if>
+      <if test="stableName != null">
+        #{stableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null">
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldType != null">
+        #{fieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=VARCHAR},
+      </if>
+      <if test="linenum != null">
+        #{linenum,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

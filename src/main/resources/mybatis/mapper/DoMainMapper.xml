@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="yong.hui.dao.DoMainMapper" >
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.DoMain" >
+    <id column="DOMAIN_ID" property="domainId" jdbcType="DECIMAL" />
+    <result column="DOMAIN_NAME" property="domainName" jdbcType="VARCHAR" />
+    <result column="LAST_TIME" property="lastTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    DOMAIN_ID, DOMAIN_NAME, LAST_TIME
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from DOMAIN
+    where DOMAIN_ID = #{domainId,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from DOMAIN
+    where DOMAIN_ID = #{domainId,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="yong.hui.pojo.DoMain" >
+    insert into DOMAIN (DOMAIN_ID, DOMAIN_NAME, LAST_TIME
+      )
+    values (#{domainId,jdbcType=DECIMAL}, #{domainName,jdbcType=VARCHAR}, #{lastTime,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.DoMain" >
+    insert into DOMAIN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="domainId != null" >
+        DOMAIN_ID,
+      </if>
+      <if test="domainName != null" >
+        DOMAIN_NAME,
+      </if>
+      <if test="lastTime != null" >
+        LAST_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="domainId != null" >
+        #{domainId,jdbcType=DECIMAL},
+      </if>
+      <if test="domainName != null" >
+        #{domainName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastTime != null" >
+        #{lastTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="yong.hui.pojo.DoMain" >
+    update DOMAIN
+    <set >
+      <if test="domainName != null" >
+        DOMAIN_NAME = #{domainName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastTime != null" >
+        LAST_TIME = #{lastTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where DOMAIN_ID = #{domainId,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="yong.hui.pojo.DoMain" >
+    update DOMAIN
+    set DOMAIN_NAME = #{domainName,jdbcType=VARCHAR},
+      LAST_TIME = #{lastTime,jdbcType=VARCHAR}
+    where DOMAIN_ID = #{domainId,jdbcType=DECIMAL}
+  </update>
+</mapper>

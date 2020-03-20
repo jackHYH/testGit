@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="yong.hui.dao.TProviderMapper" >
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.TProvider" >
+    <id column="LINENUM" property="linenum" jdbcType="DECIMAL" />
+    <result column="PTABLE" property="ptable" jdbcType="VARCHAR" />
+    <result column="PTABLE_NAME" property="ptableName" jdbcType="VARCHAR" />
+    <result column="FIELD" property="field" jdbcType="VARCHAR" />
+    <result column="FIELD_NAME" property="fieldName" jdbcType="VARCHAR" />
+    <result column="FIELD_TYPE" property="fieldType" jdbcType="VARCHAR" />
+    <result column="REQUIRED" property="required" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    LINENUM, PTABLE, PTABLE_NAME, FIELD, FIELD_NAME, FIELD_TYPE, REQUIRED
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from T_PROVIDER
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from T_PROVIDER
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="yong.hui.pojo.TProvider" >
+    insert into T_PROVIDER (LINENUM, PTABLE, PTABLE_NAME, 
+      FIELD, FIELD_NAME, FIELD_TYPE, 
+      REQUIRED)
+    values (#{linenum,jdbcType=DECIMAL}, #{ptable,jdbcType=VARCHAR}, #{ptableName,jdbcType=VARCHAR}, 
+      #{field,jdbcType=VARCHAR}, #{fieldName,jdbcType=VARCHAR}, #{fieldType,jdbcType=VARCHAR}, 
+      #{required,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.TProvider" >
+    insert into T_PROVIDER
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="linenum != null" >
+        LINENUM,
+      </if>
+      <if test="ptable != null" >
+        PTABLE,
+      </if>
+      <if test="ptableName != null" >
+        PTABLE_NAME,
+      </if>
+      <if test="field != null" >
+        FIELD,
+      </if>
+      <if test="fieldName != null" >
+        FIELD_NAME,
+      </if>
+      <if test="fieldType != null" >
+        FIELD_TYPE,
+      </if>
+      <if test="required != null" >
+        REQUIRED,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="linenum != null" >
+        #{linenum,jdbcType=DECIMAL},
+      </if>
+      <if test="ptable != null" >
+        #{ptable,jdbcType=VARCHAR},
+      </if>
+      <if test="ptableName != null" >
+        #{ptableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null" >
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null" >
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldType != null" >
+        #{fieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null" >
+        #{required,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="yong.hui.pojo.TProvider" >
+    update T_PROVIDER
+    <set >
+      <if test="ptable != null" >
+        PTABLE = #{ptable,jdbcType=VARCHAR},
+      </if>
+      <if test="ptableName != null" >
+        PTABLE_NAME = #{ptableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null" >
+        FIELD = #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null" >
+        FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldType != null" >
+        FIELD_TYPE = #{fieldType,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null" >
+        REQUIRED = #{required,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="yong.hui.pojo.TProvider" >
+    update T_PROVIDER
+    set PTABLE = #{ptable,jdbcType=VARCHAR},
+      PTABLE_NAME = #{ptableName,jdbcType=VARCHAR},
+      FIELD = #{field,jdbcType=VARCHAR},
+      FIELD_NAME = #{fieldName,jdbcType=VARCHAR},
+      FIELD_TYPE = #{fieldType,jdbcType=VARCHAR},
+      REQUIRED = #{required,jdbcType=VARCHAR}
+    where LINENUM = #{linenum,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yong.hui.dao.ProviderMapper">
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.Provider">
+    <result column="PTABLE" jdbcType="VARCHAR" property="ptable" />
+    <result column="PTABLE_NAME" jdbcType="VARCHAR" property="ptableName" />
+    <result column="FIELD" jdbcType="VARCHAR" property="field" />
+    <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="REQUIRED" jdbcType="VARCHAR" property="required" />
+    <result column="LINENUM" jdbcType="DECIMAL" property="linenum" />
+  </resultMap>
+  <insert id="insert" parameterType="yong.hui.pojo.Provider">
+    insert into T_PROVIDER (PTABLE, PTABLE_NAME, FIELD, 
+      FIELD_NAME, TYPE, REQUIRED, 
+      LINENUM)
+    values (#{ptable,jdbcType=VARCHAR}, #{ptableName,jdbcType=VARCHAR}, #{field,jdbcType=VARCHAR}, 
+      #{fieldName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{required,jdbcType=VARCHAR}, 
+      #{linenum,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.Provider">
+    insert into T_PROVIDER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ptable != null">
+        PTABLE,
+      </if>
+      <if test="ptableName != null">
+        PTABLE_NAME,
+      </if>
+      <if test="field != null">
+        FIELD,
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME,
+      </if>
+      <if test="type != null">
+        TYPE,
+      </if>
+      <if test="required != null">
+        REQUIRED,
+      </if>
+      <if test="linenum != null">
+        LINENUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ptable != null">
+        #{ptable,jdbcType=VARCHAR},
+      </if>
+      <if test="ptableName != null">
+        #{ptableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null">
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=VARCHAR},
+      </if>
+      <if test="linenum != null">
+        #{linenum,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="yong.hui.pojo.Provider">
+    <result column="PTABLE" jdbcType="VARCHAR" property="ptable" />
+    <result column="PTABLE_NAME" jdbcType="VARCHAR" property="ptableName" />
+    <result column="FIELD" jdbcType="VARCHAR" property="field" />
+    <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
+    <result column="TYPE" jdbcType="VARCHAR" property="type" />
+    <result column="REQUIRED" jdbcType="VARCHAR" property="required" />
+    <result column="LINENUM" jdbcType="DECIMAL" property="linenum" />
+  </resultMap>
+  <insert id="insert" parameterType="yong.hui.pojo.Provider">
+    insert into T_PROVIDER (PTABLE, PTABLE_NAME, FIELD, 
+      FIELD_NAME, TYPE, REQUIRED, 
+      LINENUM)
+    values (#{ptable,jdbcType=VARCHAR}, #{ptableName,jdbcType=VARCHAR}, #{field,jdbcType=VARCHAR}, 
+      #{fieldName,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{required,jdbcType=VARCHAR}, 
+      #{linenum,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="yong.hui.pojo.Provider">
+    insert into T_PROVIDER
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="ptable != null">
+        PTABLE,
+      </if>
+      <if test="ptableName != null">
+        PTABLE_NAME,
+      </if>
+      <if test="field != null">
+        FIELD,
+      </if>
+      <if test="fieldName != null">
+        FIELD_NAME,
+      </if>
+      <if test="type != null">
+        TYPE,
+      </if>
+      <if test="required != null">
+        REQUIRED,
+      </if>
+      <if test="linenum != null">
+        LINENUM,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="ptable != null">
+        #{ptable,jdbcType=VARCHAR},
+      </if>
+      <if test="ptableName != null">
+        #{ptableName,jdbcType=VARCHAR},
+      </if>
+      <if test="field != null">
+        #{field,jdbcType=VARCHAR},
+      </if>
+      <if test="fieldName != null">
+        #{fieldName,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="required != null">
+        #{required,jdbcType=VARCHAR},
+      </if>
+      <if test="linenum != null">
+        #{linenum,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>
